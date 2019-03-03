@@ -14,20 +14,16 @@ class Solution {
         ListNode p = head;
         
         while (p != null) {
-            ListNode tail;
             if (p.val < x) {
                 p1.next = p;
                 p1 = p;
-                tail = p1;
             } else {
                 p2.next = p;
                 p2 = p;
-                tail = p2;
             }
             p = p.next;
-            tail.next = null;
         }
-        
+        p2.next = null;
         p1.next = dummy2.next;
         return dummy1.next;
     }
